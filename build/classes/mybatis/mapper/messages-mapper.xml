@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="messages">
+	<insert id = "create" parameterType = "hashmap">
+		INSERT INTO MESSAGES(TARGET, BODY, PASS) VALUES(#{target}, #{body}, #{pass})
+	</insert>
+	
+	<select id = "readByTarget" resultType = "data.vo.Message">
+		SELECT * FROM MESSAGES WHERE TARGET = #{target}
+	</select>
+	
+	<delete id = "delete">
+		DELETE FROM MESSAGES WHERE NO = #{no}
+	</delete>
+	
+</mapper>

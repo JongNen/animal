@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver"
+					value="com.mysql.cj.jdbc.Driver" />
+				<property name="url"
+					value="jdbc:mysql://database-1.cwmsu3cjhaig.ap-northeast-2.rds.amazonaws.com:3306/animal" />
+				<property name="username" value="Jongs" />
+				<property name="password" value="elxm153353" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="mybatis/mapper/messages-mapper.xml"/>
+	</mappers>
+</configuration>
